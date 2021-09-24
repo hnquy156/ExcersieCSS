@@ -1,0 +1,96 @@
+* {
+    padding: 0 0;
+    margin: 0 0;
+    --color-red: red;
+    --color-green: green;
+}
+
+.container {
+    background-image: linear-gradient(to right, #08851e, #006725, #004923, #022d1b, #03120c);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    outline: none;
+    font-size: 30px;
+    background-color: transparent;
+    transition: all 0.2s;
+    position: relative;
+    box-shadow: 2px 4px 14px 2px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    transform: translate(-4px, -4px);
+}
+
+button::before {
+    content: attr(data-text);
+    font-size: 20px;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    border-radius: 4px;
+    padding: 6px;
+    opacity: 0;
+}
+
+button:hover::before {
+    opacity: 1;
+    animation: animation 0.2s linear;
+}
+
+button:nth-child(1) {
+    color: var(--color-red);
+    border: 2px solid var(--color-red);
+}
+
+button:nth-child(1)::before {
+    border: 2px solid var(--color-red);
+}
+
+button:nth-child(1):hover {
+    background-color: var(--color-red);
+    color: #000;
+}
+
+button:nth-child(1):hover::before {
+    color: var(--color-red);
+}
+
+button:nth-child(2) {
+    color: var(--color-green);
+    border: 2px solid var(--color-green);
+}
+
+button:nth-child(2)::before {
+    border: 2px solid var(--color-green);
+}
+
+button:nth-child(2):hover {
+    background-color: var(--color-green);
+    color: #000;
+}
+
+button:nth-child(2):hover::before {
+    color:var(--color-green);
+}
+
+@keyframes animation {
+    from {
+        opacity: 0;
+        top: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
