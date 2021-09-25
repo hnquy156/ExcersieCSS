@@ -1,0 +1,140 @@
+* {
+    margin: 0 0;
+    padding: 0 0;
+    --color-white-low: rgba(255, 255, 255, 0.4);
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to left bottom, #0f53b9, #274ec5, #4145cf, #5c38d6, #781fda);
+}
+
+p {
+    font-size: 40px;
+    color: aqua;
+    margin-bottom: 20px;
+    animation: title 2s linear infinite;
+}
+
+.list-items {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #0f53b9, #274ec5, #4145cf, #5c38d6, #781fda);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.8);
+    width: 350px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    color: var(--color-white-low);
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+
+
+.item input {
+    display: flex;
+    -webkit-appearance: none;
+    border: 2px solid var(--color-white-low);
+    border-radius: 3px;
+    height: 15px;
+    width: 15px;
+    margin: auto;
+    transition: 0.2s;
+    z-index: 2;
+}
+
+.item input::before {
+    content: '\f00c';
+    font-family: fontAwesome;
+    font-size: 11px;
+    justify-content: center;
+    align-items: center;
+    color: aqua;
+    opacity: 0;
+    transition: .4s;
+    
+}
+
+.item input:checked {
+    border-color: aqua;
+    box-shadow: 0px 0px 5px aqua;
+}
+
+.item input:checked:before {
+    opacity: 1;
+}
+
+.item input:checked + label {
+    color: white;
+}
+
+.item input:checked ~ span {
+    color: aqua;
+    animation: rotate 0.2s;
+} 
+
+.item label::before {
+    content: '';
+    height: 68%;
+    width: 60%;
+    background-color: rgba(0,0,0,.1);
+    position: absolute;
+    left: -45%;
+    bottom: 0;
+    transform: skewX(30deg);
+    transition: 0.4s;
+}
+
+.item input:checked ~ label:before {
+    left: 110%
+}
+
+.item span {
+    margin: auto;
+    transition: 0.4s;
+}
+
+.item-title {
+    transition: 0.4s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-27deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(27deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes title {
+    0% {
+        text-shadow: 0px 0px 6px rgba(0,255,255,0);
+    }
+    50% {
+        text-shadow: 0px 0px 6px rgba(0,255,255,1);
+    }
+    100% {
+        text-shadow: 0px 0px 6px rgba(0,255,255,0);
+    }
+}
