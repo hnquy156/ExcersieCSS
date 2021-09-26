@@ -83,7 +83,7 @@ body {
     font-weight: 550;
 }
 
-.address {
+.my-email {
     color: #6e5cb9;
     font-size: 14px;
 }
@@ -101,6 +101,7 @@ body {
 
 .info-title p, .info-content p {
     margin-bottom: 6px;
+    text-transform: capitalize;
 }
 
 .info-content {
