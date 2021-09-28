@@ -1,0 +1,21 @@
+* {
+    margin: 0 0;
+    padding: 0 0;
+    background-color: #f4f4f4;
+}
+
+.list-items {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 18%;
+    height: 100%;
+    margin: 1% 1%;
+    background-color: repeating-linear-gradient(red, yellow 10%, green 20%) ;
+}

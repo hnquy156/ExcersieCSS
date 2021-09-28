@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function moveStart(starElement) {
         let right = 0;
-        const move = 2 + Math.floor(Math.random() * 2);
+        const move = 2 + (Math.random() * 2);
         setInterval( () => {
 
             if (right > screen.width) {
