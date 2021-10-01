@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    --size-box: 70px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.preload {
+    display: grid;
+    grid-template-columns: repeat(3, var(--size-box));
+    grid-template-rows: repeat(3, var(--size-box));
+    grid-row-gap: 8px;
+    grid-column-gap: 8px;
+    animation: animationRotate 8s linear infinite;
+}
+
+.preload > div {
+    background-color: aqua;
+    animation: animationScale 2s linear infinite;
+}
+
+.preload > div:nth-child(1) {
+    background-color: #9412FB;
+}
+
+.preload > div:nth-child(2),
+.preload > div:nth-child(4) {
+    background-color: #A810E3;
+    animation-delay: 0.2s;
+}
+
+.preload > div:nth-child(3),
+.preload > div:nth-child(5),
+.preload > div:nth-child(7) {
+    background-color: #E01EFA;
+    animation-delay: 0.4s;
+}
+
+.preload > div:nth-child(6),
+.preload > div:nth-child(8) {
+    background-color: #E618D6;
+    animation-delay: 0.6s;
+}
+
+.preload > div:nth-child(9) {
+    background-color: #FF1CA9;
+    animation-delay: 0.8s;
+}
+
+.preload.cycle > div {
+    border-radius: 50%;
+}
+
+@keyframes animationScale {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes animationRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(90deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    45% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    70% {
+        transform: rotate(270deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    95% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
